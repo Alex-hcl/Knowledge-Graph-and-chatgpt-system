@@ -1,166 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Resume</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <title>精彩之旅</title>
+
+    <!-- 导入 Bootstrap 样式表 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #2C3E50;
-            color: #ECF0F1;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            box-sizing: border-box;
         }
 
         header {
-            background: #3498DB;
+            background-color: #333;
             color: #fff;
             text-align: center;
-            padding: 2em 0;
+            padding: 1em;
         }
 
         section {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            animation: fadeInUp 1s ease;
+            margin: 20px;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        h2 {
+            color: #333;
         }
 
-        h1, h2, h3 {
-            color: #3498DB;
+        p {
+            line-height: 1.6;
         }
 
-        ul {
-            list-style-type: none;
-            padding: 0;
+        img {
+            max-width: 100%;
+            height: auto;
         }
 
-        .section-title {
-            font-size: 2em;
-            color: #3498DB;
-            border-bottom: 2px solid #3498DB;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        .sub-section {
-            margin-bottom: 20px;
-        }
-
-        .sub-section h3 {
-            margin-bottom: 10px;
-            color: #3498DB;
-        }
-
-        .date {
-            font-style: italic;
-            color: #888;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: space-between;
-            font-size: 1.2em;
-            margin-bottom: 20px;
-        }
-
-        .contact-info a {
-            color: #3498DB;
-            text-decoration: none;
-        }
-
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-
-        .social-icons {
-            list-style-type: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .social-icons li {
-            margin: 0 10px;
-        }
-
-        .social-icons a {
-            text-decoration: none;
-            color: #3498DB;
-            font-size: 1.5em;
-            transition: color 0.3s ease;
-        }
-
-        .social-icons a:hover {
+        footer {
+            background-color: #333;
             color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
+
 <body>
 
     <header>
-        <h1>Yilin Yang</h1>
-        <p>Yilin Yang</p>
+        <h1>探索世界之美</h1>
+        <p>发现不一样的风景，体验独特的文化</p>
     </header>
 
     <section>
-        <div class="contact-info">
-            <div>
-                <p>Email: your.email@example.com</p>
-                <p>Phone: (123) 456-7890</p>
-            </div>
-            <div>
-                <p>LinkedIn: <a href="https://www.linkedin.com/in/yourname" target="_blank">linkedin.com/in/yourname</a></p>
-                <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
-            </div>
-        </div>
-
-        <div class="section-title">Education</div>
-        <div class="sub-section">
-            <h3>Degree in Education</h3>
-            <p>谢菲尔德大学</p>
-        </div>
-
-        <div class="section-title">Work Experience</div>
-        <div class="sub-section">
-            <h3>teacher</h3>
-            <p>Company Name - Location</p>
-            <p class="date">January 20XX - Present</p>
-            <ul>
-                <li>Developed and maintained web applications using HTML, CSS, and JavaScript.</li>
-                <li>Collaborated with cross-functional teams to deliver high-quality software solutions.</li>
-                <!-- Add more details as needed -->
-            </ul>
-        </div>
-
-        <!-- Add more sections for skills, projects, etc. -->
-
-        <div class="social-icons">
-            <li><a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://www.facebook.com/yourusername" target="_blank"><i class="fab fa-facebook"></i></a></li>
-            <li><a href="https://www.instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a></li>
-            <!-- Add more social icons as needed -->
-        </div>
+        <h2>欢迎来到我们的旅游网站</h2>
+        <p>在这里，我们为您精心准备了世界各地最美的景点、最特色的文化和最美味的美食。无论您是喜欢山川河海，还是钟情古老的建筑和历史悠久的文明，我们都有适合您的旅行计划。</p>
+        <img src="https://example.com/beautiful-destination.jpg" alt="美丽的目的地">
     </section>
 
+    <section>
+        <h2>独特的旅行体验</h2>
+        <p>我们的旅行不仅仅是为了观光，更是为了让您深度融入当地的文化。与当地居民互动，品尝地道美食，参与传统活动，让您的旅程变得更加丰富多彩。</p>
+        <img src="https://example.com/local-experience.jpg" alt="独特的旅行体验">
+    </section>
+
+    <section>
+        <h2>联系我们</h2>
+        <p>有关旅行目的地、行程安排或其他任何问题，欢迎随时联系我们。我们的团队将竭诚为您提供最好的服务。</p>
+        <p>Email: info@example.com</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 精彩之旅</p>
+    </footer>
+
+    <!-- 导入 jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+
+    <!-- 导入 Bootstrap 的 JavaScript 插件（依赖于 jQuery） -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
+
 </html>
