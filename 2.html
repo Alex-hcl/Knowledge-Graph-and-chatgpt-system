@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Step02</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700;900&display=swap"
+          rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link href="css/aos.css" rel="stylesheet">
+
+    <link href="css/templatemo-nomad-force.css" rel="stylesheet">
+    <!--
+
+    TemplateMo 567 Nomad Force
+
+    https://templatemo.com/tm-567-nomad-force
+
+    -->
+</head>
+
+<body>
+
+<main>
+
+    <section class="hero" id="hero">
+        <div class="heroText">
+            <h1 class="news-detail-title text-white mt-lg-5 mb-lg-4" data-aos="zoom-in" data-aos-delay="300">
+                Step02: Entity Relation Extraction
+            </h1>
+
+            <div class="d-flex justify-content-center align-items-center">
+
+
+            </div>
+        </div>
+
+        <div class="videoWrapper">
+            <img src="images/portfolio/img05.png" class="img-fluid news-detail-image" alt="">
+        </div>
+
+        <div class="overlay"></div>
+    </section>
+
+    <nav class="navbar navbar-expand-lg bg-light shadow-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <strong>INFSCI 2241 HOMEWORK</strong>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html#hero">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">Introduction</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#portfolio">General Design</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#news">Demo</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact">Evaluation Plan</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="news-detail section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-10 mx-auto">
+                    <h2 class="mb-3" data-aos="fade-up">Relation Extraction</h2>
+
+                    <p class="me-4" data-aos="fade-up">Relation Extraction (RE) is vital for building knowledge graphs,
+                        focusing on extracting connections between entities in text. Convolutional Neural Network (CNN)
+                        models are commonly used for this task, employing a convolutional architecture to analyze
+                        sentence structures and identify entity relationships.</p>
+
+                    <p data-aos="fade-up">In CNN-based relation extraction, the model uses convolutional layers to
+                        capture local patterns like modifiers and verb-object relationships in a sentence. It then
+                        combines this information with entity recognition results to determine relationship types. The
+                        model leverages learned features for accurate relationship classification and prediction.
+                    </p>
+
+                    <div class="clearfix my-4 mt-lg-0 mt-5">
+                        <div class="col-md-6 float-md-end mb-3 ms-md-3" data-aos="fade-up">
+                            <figure class="figure">
+                                <img src="images/news/img02.png"
+                                     class="img-fluid news-image" alt="">
+
+                                <figcaption class="figure-caption text-end">Relation Extraction</figcaption>
+                            </figure>
+                        </div>
+
+                        <p data-aos="fade-up">
+                            The specific methodology of Convolutional Neural Networks (CNNs) for extracting
+                            relationships between entities in relation extraction involves multiple steps aimed at
+                            effectively discerning entity connections from text. Initially, the model takes textual
+                            input containing information about entity relationships. Utilizing convolutional layers,
+                            CNNs automatically learn and capture local features at different positions within the
+                            sentence, crucial for identifying relationships between entities. The sliding window of
+                            convolutional kernels scans the text, progressively detecting and capturing syntactic and
+                            semantic patterns relevant to entity relationships. </p>
+
+                        <p data-aos="fade-up">
+                            Following local feature extraction, the pooling layer is employed to further reduce
+                            dimensionality and retain the most salient features. This aids in reducing the model's
+                            parameter count, improving computational efficiency, while preserving information critical
+                            for relationship identification. Subsequently, fully connected layers map the
+                            dimension-reduced features to the space of relationship types, facilitating the final
+                            relationship classification. To train the model, labeled training data is typically used,
+                            and the model parameters are adjusted through the backpropagation algorithm to enable
+                            accurate prediction of entity relationships. The processing results are as shown in the
+                            following table.
+
+                        </p>
+
+                        <div class="col-lg-8 col-10 mx-auto">
+                            <!-- ... (existing content) ... -->
+
+                            <!-- Inserted Bootstrap Table -->
+                            <div class="table-responsive mt-4" data-aos="fade-up">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <th>Entity 1</th>
+                                        <th>Relationship</th>
+                                        <th>Entity 2</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Human-Computer Interaction</td>
+                                        <td>Subfield of</td>
+                                        <td>Information Science</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Machine Learning</td>
+                                        <td>Utilizes</td>
+                                        <td>Data Mining</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Artificial Intelligence</td>
+                                        <td>Encompasses</td>
+                                        <td>Natural Language Processing</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Computer Vision</td>
+                                        <td>Applies to</td>
+                                        <td>Image Recognition</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Information Retrieval</td>
+                                        <td>Linked to</td>
+                                        <td>Text Mining</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Knowledge Graph</td>
+                                        <td>Utilized in</td>
+                                        <td>Knowledge Representation and Reasoning</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Big Data Analytics</td>
+                                        <td>Integral to</td>
+                                        <td>Big Data Technologies</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cybersecurity</td>
+                                        <td>Domain of</td>
+                                        <td>Network Security</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cognitive Computing</td>
+                                        <td>Intersects with</td>
+                                        <td>Human Cognition</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Information Science Discipline</td>
+                                        <td>Includes</td>
+                                        <td>Computer Science, Informatics</td>
+                                    </tr>
+                                    <!-- Add more rows as needed -->
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- ... (remaining content) ... -->
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-12">
+                <h5 class="text-white">
+                    <i class="bi-geo-alt-fill me-2"></i>
+                    University of Pittsburgh
+                </h5>
+
+                <a href="chh313@pitt.edu" class="custom-link mt-3 mb-5">
+                    chh313@pitt.edu
+                </a>
+            </div>
+
+            <div class="col-6">
+                <p class="copyright-text mb-0">Copyright © Chenglue Huang 2023
+
+
+            </div>
+
+            <div class="col-lg-3 col-5 ms-auto">
+                <ul class="social-icon">
+                    <li><a href="#" class="social-icon-link bi-facebook"></a></li>
+
+                    <li><a href="#" class="social-icon-link bi-twitter"></a></li>
+
+                    <li><a href="#" class="social-icon-link bi-whatsapp"></a></li>
+
+                    <li><a href="#" class="social-icon-link bi-instagram"></a></li>
+
+                    <li><a href="#" class="social-icon-link bi-youtube"></a></li>
+                </ul>
+            </div>
+
+        </div>
+        </section>
+</footer>
+
+<!-- JAVASCRIPT FILES -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery.sticky.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/magnific-popup-options.js"></script>
+<script src="js/scrollspy.min.js"></script>
+<script src="js/custom.js"></script>
+
+</body>
+</html>

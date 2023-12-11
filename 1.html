@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Step 01</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700;900&display=swap"
+          rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link href="css/aos.css" rel="stylesheet">
+
+    <link href="css/templatemo-nomad-force.css" rel="stylesheet">
+    <!--
+
+    TemplateMo 567 Nomad Force
+
+    https://templatemo.com/tm-567-nomad-force
+
+    -->
+</head>
+
+<body>
+
+<main>
+
+    <section class="hero" id="hero">
+        <div class="heroText">
+            <h1 class="news-detail-title text-white mt-lg-5 mb-lg-4" data-aos="zoom-in" data-aos-delay="300">
+                Step01: Named-entity recognition
+            </h1>
+
+            <div class="d-flex justify-content-center align-items-center">
+
+
+            </div>
+        </div>
+
+        <div class="videoWrapper">
+            <img src="images/portfolio/img04.png" class="img-fluid news-detail-image" alt="">
+        </div>
+
+        <div class="overlay"></div>
+    </section>
+
+    <nav class="navbar navbar-expand-lg bg-light shadow-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <strong>INFSCI 2241 HOMEWORK</strong>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html#hero">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">Introduction</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#portfolio">General Design</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#news">Demo</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact">Evaluation Plan</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="news-detail section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-10 mx-auto">
+                    <h2 class="mb-3" data-aos="fade-up">Named-entity recognition</h2>
+
+                    <p class="me-4" data-aos="fade-up">Named Entity Recognition (NER) plays a crucial role in the
+                        construction of knowledge graphs, aiming to accurately identify named entities with specific
+                        meanings from textual data, such as machine learning, data mining, computer vision, and more.
+                        The ALBERT-CRF model is pivotal in this task. ALBERT, as a lightweight pre-trained language
+                        model, reduces the model parameter count and enhances training and inference efficiency through
+                        strategies like parameter sharing and sequence prediction. In the NER model based on ALBERT-CRF,
+                        ALBERT is employed to encode text sequences into word vector representations, combined with
+                        contextual information for entity classification, as depicted in the diagram below.
+                    </p>
+
+                    <p data-aos="fade-up">Conditional Random Field (CRF) is a probabilistic graphical model commonly
+                        used in sequence labeling tasks, like named entity recognition. It leverages contextual
+                        information and relationships between labels to infer the most probable label sequence. In the
+                        ALBERT-CRF-based NER model, the CRF model is used for post-processing and label optimization of
+                        the ALBERT model's output to achieve more accurate named entity recognition results.
+
+                    </p>
+
+                    <div class="clearfix my-4 mt-lg-0 mt-5">
+                        <div class="col-md-6 float-md-end mb-3 ms-md-3" data-aos="fade-up">
+                            <figure class="figure">
+                                <img src="images/news/img01.png"
+                                     class="img-fluid news-image" alt="">
+
+                                <figcaption class="figure-caption text-end">ALBERT-CRF MODEL</figcaption>
+                            </figure>
+                        </div>
+
+                        <p data-aos="fade-up">
+                            The core idea of the ALBERT-CRF model is to introduce CRF as the output layer for sequence
+                            labeling on top of the ALBERT model. ALBERT is pre-trained on a large-scale unsupervised
+                            corpus to learn contextual representations of words and sentences. The ALBERT-CRF model adds
+                            a sequence labeling layer on top of ALBERT's output to identify and label named entities in
+                            the input text. This layer consists of two sub-layers: the forward layer and the CRF layer.
+                        </p>
+
+                        <p data-aos="fade-up">
+                            The forward layer is a fully connected neural network used to map ALBERT's output to the
+                            label space. It can be implemented using structures such as Multi-Layer Perceptron (MLP) or
+                            Convolutional Neural Network (CNN). The output of the forward layer represents the scores
+                            for each label at each position. The CRF layer is responsible for modeling the dependencies
+                            between labels by defining a transition matrix to constrain the rationality of the label
+                            sequence. It considers the probability transitions between adjacent labels, enabling global
+                            optimization of the label sequence based on contextual information. The output of the CRF
+                            layer is the final label sequence. This integrated model structure helps enhance the
+                            accuracy and robustness of named entity recognition. Through the Albert-CRF model, this
+                            study extracted a vast amount of knowledge entities from extensive datasets. Partial content
+                            is presented in the table below.
+
+                        </p>
+
+                        <div class="col-lg-8 col-10 mx-auto">
+                            <!-- ... (existing content) ... -->
+
+                            <!-- Inserted Bootstrap Table -->
+                            <div class="table-responsive mt-4" data-aos="fade-up">
+                                <table class="table table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Entity</th>
+                                        <th scope="col">Category</th>
+                                    </tr>
+                                    </thead>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Computer Vision</td>
+                                        <td>Artificial Intelligence</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Deep Learning</td>
+                                        <td>Artificial Intelligence</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Data Mining</td>
+                                        <td>Data Science</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">4</th>
+                                        <td>Natural Language Processing</td>
+                                        <td>Language Technology</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">5</th>
+                                        <td>Intelligent Systems</td>
+                                        <td>Artificial Intelligence</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">6</th>
+                                        <td>Cybersecurity</td>
+                                        <td>Maths</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">7</th>
+                                        <td>Interaction Design</td>
+                                        <td>HCI</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">8</th>
+                                        <td>Data Science</td>
+                                        <td>Maths</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">9</th>
+                                        <td>NLP</td>
+                                        <td>Machine Learning</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">10</th>
+                                        <td>Knowledge Graph</td>
+                                        <td>Knowledge Representation and Retrieval</td>
+                                    </tr>
+                                    <!-- Add more rows as needed -->
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- ... (remaining content) ... -->
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-12">
+                <h5 class="text-white">
+                    <i class="bi-geo-alt-fill me-2"></i>
+                    University of Pittsburgh
+                </h5>
+
+                <a href="chh313@pitt.edu" class="custom-link mt-3 mb-5">
+                    chh313@pitt.edu
+                </a>
+            </div>
+
+            <div class="col-6">
+                <p class="copyright-text mb-0">Copyright © Chenglue Huang 2023
+
+
+            </div>
+
+            <div class="col-lg-3 col-5 ms-auto">
+                <ul class="social-icon">
+                    <li><a href="#" class="social-icon-link bi-facebook"></a></li>
+
+                    <li><a href="#" class="social-icon-link bi-twitter"></a></li>
+
+                    <li><a href="#" class="social-icon-link bi-whatsapp"></a></li>
+
+                    <li><a href="#" class="social-icon-link bi-instagram"></a></li>
+
+                    <li><a href="#" class="social-icon-link bi-youtube"></a></li>
+                </ul>
+            </div>
+
+        </div>
+        </section>
+</footer>
+
+<!-- JAVASCRIPT FILES -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery.sticky.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/magnific-popup-options.js"></script>
+<script src="js/scrollspy.min.js"></script>
+<script src="js/custom.js"></script>
+
+</body>
+</html>
