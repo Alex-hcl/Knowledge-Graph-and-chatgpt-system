@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Knowledge Assessment and Testing</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.2.1/echarts.min.js"></script>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2 class="text-center">Knowledge Assessment and Testing</h2>
+
+    <p>The dual-phase knowledge assessment and testing approach is anticipated to yield comprehensive insights into users' understanding of the knowledge domain and the impact of knowledge graph integration on their knowledge acquisition. In the pre-interaction phase, where users undergo a set of meticulously designed questions, it is expected that responses will establish a baseline of users' initial knowledge levels. The diverse question formats, including multiple-choice, true/false, and short-answer, are likely to provide a nuanced view of users' knowledge depth across key concepts in the targeted domain.</p>
+
+    <!-- Placeholder for ECharts chart -->
+    <div id="echartsChart" style="height: 400px;"></div>
+
+    <div class="mt-4">
+        <h4>Qualitative Insights</h4>
+        <p>Qualitative insights gathered through surveys and interviews are expected to provide valuable feedback on users' experiences with knowledge graph interactions. Users are likely to offer insights into the usability, clarity, and informativeness of the knowledge graph, guiding iterative improvements to both the system interface and the knowledge graph itself.</p>
+    </div>
+
+    <div class="mt-4">
+        <h4>Quantitative Data</h4>
+        <p>The quantitative data collected from pre- and post-assessments will undergo statistical analysis to measure changes in users' knowledge levels. Concurrently, thematic analysis of qualitative feedback is expected to offer deeper insights into user perceptions and experiences.</p>
+    </div>
+
+    <div class="mt-4">
+        <h4>Synthesis of Findings</h4>
+        <p>The synthesis of these findings into a comprehensive report will detail key observations and provide recommendations for optimizing the intelligent system based on user interactions and feedback. Overall, the expected results aim to showcase the effectiveness of knowledge graph integration in enhancing users' knowledge acquisition and inform iterative improvements for an optimized user experience.</p>
+    </div>
+</div>
+
+<script>
+    // Sample ECharts chart
+    document.addEventListener('DOMContentLoaded', function () {
+        var echartsChart = echarts.init(document.getElementById('echartsChart'));
+
+        var option = {
+            title: {
+                text: 'Expected Results',
+                left: 'center'
+            },
+            tooltip: {},
+            xAxis: {
+                data: ['Knowledge Acquisition', 'User Experience', 'Optimization']
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [{
+                name: 'Impact',
+                type: 'bar',
+                data: [90, 95, 85]
+            }]
+        };
+
+        echartsChart.setOption(option);
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Knowledge Graph Integration Study</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.2.1/echarts.min.js"></script>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Knowledge Graph Integration Study</h1>
+
+    <p>The controlled experimental studies outlined in the proposal are expected to yield comprehensive insights into the effects of knowledge graph integration on user interactions...</p>
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <h3>Information Retrieval Time</h3>
+            <div id="informationRetrievalChart" style="height: 300px;"></div>
+        </div>
+        <div class="col-md-6">
+            <h3>Depth and Breadth of Knowledge</h3>
+            <div id="depthBreadthChart" style="height: 300px;"></div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <h3>User-Generated Questions</h3>
+            <div id="userQuestionsChart" style="height: 300px;"></div>
+        </div>
+        <div class="col-md-6">
+            <h3>Integration Impact Summary</h3>
+            <p>Overall, the expected results suggest that knowledge graph integration will have a positive impact on user interactions, leading to more efficient information retrieval, a deeper understanding of knowledge domains, and an improvement in the quality of user-generated queries...</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    // ECharts Configuration for Information Retrieval Time Chart
+    var informationRetrievalChart = echarts.init(document.getElementById('informationRetrievalChart'));
+    var informationRetrievalOption = {
+        title: {
+            text: 'Information Retrieval Time',
+            left: 'center'
+        },
+        xAxis: {
+            type: 'category',
+            data: ['Before Integration', 'After Integration']
+        },
+        yAxis: {
+            type: 'value',
+            name: 'Time (seconds)'
+        },
+        series: [{
+            name: 'Time',
+            type: 'bar',
+            data: [15, 8] // Replace with your actual data
+        }]
+    };
+    informationRetrievalChart.setOption(informationRetrievalOption);
+
+    // ECharts Configuration for Depth and Breadth of Knowledge Chart
+    var depthBreadthChart = echarts.init(document.getElementById('depthBreadthChart'));
+    var depthBreadthOption = {
+        title: {
+            text: 'Depth and Breadth of Knowledge',
+            left: 'center'
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: '{a} <br/>{b} : {c}%'
+        },
+        series: [
+            {
+                name: 'Knowledge',
+                type: 'pie',
+                radius: '55%',
+                center: ['50%', '60%'],
+                data: [
+                    {value: 70, name: 'In-depth Knowledge'},
+                    {value: 30, name: 'Breadth Knowledge'}
+                ],
+                emphasis: {
+                    itemStyle: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }
+        ]
+    };
+    depthBreadthChart.setOption(depthBreadthOption);
+
+    // ECharts Configuration for User-Generated Questions Chart
+    var userQuestionsChart = echarts.init(document.getElementById('userQuestionsChart'));
+    var userQuestionsOption = {
+        title: {
+            text: 'User-Generated Questions Quality Improvement',
+            left: 'center'
+        },
+        xAxis: {
+            type: 'category',
+            data: ['Before Integration', 'After Integration']
+        },
+        yAxis: {
+            type: 'value',
+            name: 'Quality Score'
+        },
+        series: [{
+            name: 'Quality Score',
+            type: 'line',
+            data: [60, 85] // Replace with your actual data
+        }]
+    };
+    userQuestionsChart.setOption(userQuestionsOption);
+</script>
+
+</body>
+</html>

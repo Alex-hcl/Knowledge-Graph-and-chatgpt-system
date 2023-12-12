@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Survey of Query Understand Accuracy</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2 class="text-center">Survey of Query Understand Accuracy</h2>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Query ID</th>
+            <th scope="col">Manual Annotation</th>
+            <th scope="col">System Response</th>
+            <th scope="col">Knowledge Graph Interaction</th>
+            <th scope="col">Accuracy Score</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>User query involves "Applications of AI in healthcare." Manual annotation specifies the user's expectation to learn about specific applications of AI in the healthcare domain.</td>
+            <td>ChatGPT's response includes machine learning and data analytics in the healthcare domain.</td>
+            <td>ChatGPT guides the user through the knowledge graph, showcasing concepts and specific cases related to AI applications in healthcare.</td>
+            <td>80%</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>User queries about "Latest research on renewable energy." Manual annotation details the user's desire for information on the latest research in renewable energy.</td>
+            <td>ChatGPT's response contains basic information on solar and wind energy but lacks mention of the latest research.</td>
+            <td>ChatGPT visually presents the research history in the renewable energy field through the knowledge graph and points to recent advancements.</td>
+            <td>90%</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>User queries "Significant scientific breakthroughs in history." Manual annotation indicates the user seeks detailed information about historical scientific breakthroughs.</td>
+            <td>ChatGPT's response mentions some significant scientific breakthroughs but lacks detailed information.</td>
+            <td>ChatGPT exemplifies historical scientific breakthroughs in the knowledge graph, guiding the user to explore each example in-depth.</td>
+            <td>85%</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

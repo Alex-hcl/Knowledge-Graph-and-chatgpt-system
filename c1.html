@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>User Feedback Survey</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom style for centering h2 */
+        .center-text {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2>User Feedback Survey</h2>
+    <form>
+        <!-- Section 1: Users’ Satisfaction -->
+        <div class="form-group">
+            <label for="satisfaction">Rate your satisfaction with knowledge retrieval after the integration of knowledge
+                graphs:</label>
+            <select class="form-control" id="satisfaction">
+                <option>Very Satisfied</option>
+                <option>Satisfied</option>
+                <option>Neutral</option>
+                <option>Dissatisfied</option>
+                <option>Very Dissatisfied</option>
+            </select>
+        </div>
+
+        <!-- Section 2: Efficiency and Effectiveness -->
+        <!-- Section 2: Efficiency and Effectiveness -->
+        <div class="form-group">
+            <label>Did knowledge graph integration make it easier for you to find the information you were looking
+                for?</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="easeOfFinding" id="yesFinding" value="yes" checked>
+                <label class="form-check-label" for="yesFinding">Yes</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="easeOfFinding" id="noFinding" value="no">
+                <label class="form-check-label" for="noFinding">No</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>How would you rate the speed of information retrieval with knowledge graph integration compared to
+                the previous system?</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="speedOfRetrieval" id="yesSpeed" value="yes" checked>
+                <label class="form-check-label" for="yesSpeed">Faster</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="speedOfRetrieval" id="noSpeed" value="no">
+                <label class="form-check-label" for="noSpeed">Slower</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Were you able to find more comprehensive information with knowledge graph integration?</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="comprehensiveInfo" id="yesComprehensive" value="yes"
+                       checked>
+                <label class="form-check-label" for="yesComprehensive">Yes</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="comprehensiveInfo" id="noComprehensive" value="no">
+                <label class="form-check-label" for="noComprehensive">No</label>
+            </div>
+        </div>
+
+
+        <!-- Section 2: Continued... -->
+
+        <!-- Section 3: Quality of Knowledge Retrieval Experience -->
+        <!-- Section 3: Quality of Knowledge Retrieval Experience -->
+        <div class="form-group">
+            <label>Did the knowledge graph integration improve your understanding of the knowledge domain?</label>
+            <select class="form-control" id="understanding">
+                <option>Very Satisfied</option>
+                <option>Satisfied</option>
+                <option>Neutral</option>
+                <option>Dissatisfied</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Were you able to ask more profound and targeted questions with knowledge graph integration?</label>
+            <select class="form-control" id="profoundQuestions">
+                <option>Very Satisfied</option>
+                <option>Satisfied</option>
+                <option>Neutral</option>
+                <option>Dissatisfied</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>How would you rate the overall quality of knowledge retrieval experiences with knowledge graph
+                integration?</label>
+            <select class="form-control" id="overallQuality">
+                <option>Very Satisfied</option>
+                <option>Satisfied</option>
+                <option>Neutral</option>
+                <option>Dissatisfied</option>
+            </select>
+        </div>
+
+
+        <!-- Section 4: Open-Ended Feedback -->
+        <div class="form-group">
+            <label for="openEnded">Please provide any additional comments or suggestions regarding your experience with
+                knowledge graph integration:</label>
+            <textarea class="form-control" id="openEnded" rows="4"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <!-- 添加 ECharts 文件 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.2.1/echarts.min.js"></script>
+
+    <!-- 其他 HTML 代码 -->
+
+    <!-- ECharts 图表容器 -->
+    <div id="echartsChart" style="height: 300px;"></div>
+
+    <!-- 其他 HTML 代码 -->
+
+    <script>
+        // 在页面加载完毕后执行的 JavaScript 代码
+        document.addEventListener('DOMContentLoaded', function () {
+            // 使用 ECharts 初始化图表
+            var echartsChart = echarts.init(document.getElementById('echartsChart'));
+
+            // 图表配置项
+            var option = {
+                title: {
+                    text: 'Survey Results',
+                    left: 'center'
+                },
+                tooltip: {},
+                xAxis: {
+                    data: ['Section 1', 'Section 2', 'Section 3', 'Open-Ended Feedback']
+                },
+                yAxis: {
+                    type: 'value'
+                },
+                series: [{
+                    name: 'Number of Responses',
+                    type: 'bar',
+                    data: [/* Add your data here */]
+                }]
+            };
+
+            // 使用配置项设置图表
+            echartsChart.setOption(option);
+        });
+    </script>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
