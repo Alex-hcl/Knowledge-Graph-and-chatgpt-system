@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT & Colorful Knowledge Graph with ECharts</title>
+    <!-- 引入 Bootstrap 和 jQuery -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        #container {
+            display: flex;
+            max-width: 1200px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #chat-container {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            background-color: #fff;
+        }
+
+        #knowledge-graph {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            background-color: #f8f9fa;
+            display: none; /* Initially hide the knowledge graph */
+        }
+
+        #input-container {
+            display: flex;
+            padding: 10px;
+            background-color: #fff;
+        }
+
+        #user-input {
+            flex: 1;
+            padding: 8px;
+            margin-right: 10px;
+        }
+
+        #send-btn {
+            padding: 8px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+        }
+
+        /* Adjust the height of the chart container */
+        #chart-container {
+            height: 80vh;
+        }
+
+        /* Style for the clickable nodes in the knowledge graph */
+        .clickable-node {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="container" id="container">
+    <div class="col-md-6" id="chat-container">
+        <h2>Chat</h2>
+        <div id="chat"></div>
+        <div class="input-group mb-3" id="input-container">
+            <input type="text" class="form-control" id="user-input" placeholder="Type your message...">
+            <div class="input-group-append">
+                <button class="btn btn-primary" id="send-btn" onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6" id="knowledge-graph">
+        <h2>Knowledge Graph</h2>
+        <!-- Chart container for ECharts -->
+        <div id="chart-container"></div>
+    </div>
+</div>
+
+<script>
+    function sendMessage() {
+        var userInput = $('#user-input').val();
+        if (userInput.trim() === '') {
+            return;
+        }
+
+        // Add user message to the chat
+        var chatContainer = $('#chat');
+        chatContainer.append('<p><strong>You:</strong> ' + userInput + '</p>');
+
+        // Simulate a response from ChatGPT
+        var response = "Human information processing involves the sequential and interconnected operation of several cognitive components. Perception encompasses the integration of sensory data from vision, audition, touch, taste, and smell, forming the foundation for our understanding of the external environment. Selective attention filters relevant information, while divided attention showcases the brain's multitasking capabilities. Memory, divided into sensory, working, and long-term components, handles the storage and retrieval of information. Cognitive processes, including thinking, problem-solving, and language processing, are influenced by experiences. Emotions play a pivotal role in influencing attention, memory, and overall cognitive evaluation. Decision-making involves evaluating choices, and subsequent actions complete the information processing cycle. Feedback mechanisms and learning enable individuals to adapt and optimize their cognitive abilities continually.";
+
+        // Add ChatGPT's response to the chat
+        chatContainer.append('<p><strong>ChatGPT:</strong> ' + response + '</p>');
+
+        // Clear the user input
+        $('#user-input').val('');
+
+        // Display the knowledge graph after sending a message
+        $('#knowledge-graph').show();
+
+        // Update the knowledge graph using ECharts (you can modify this part based on your actual knowledge graph data)
+        var knowledgeGraph = $('#chart-container');
+        var chart = echarts.init(knowledgeGraph[0]);
+
+        // Sample data for demonstration
+        var graphData = {
+            nodes: [{
+                name: 'Information Science',
+                symbolSize: 45,
+                itemStyle: {
+                    color: '#5f9ea0' // CadetBlue
+                },
+                label: {
+                    show: true
+                },
+                definition: "This is the central entity, encompassing the study, organization, retrieval, and management of information."
+            }, {
+                name: 'Information Systems',
+                symbolSize: 40,
+                itemStyle: {
+                    color: '#1e90ff' // DodgerBlue
+                },
+                label: {
+                    show: true
+                },
+                definition: "These include the design and implementation of systems capable of storing, retrieving, and processing information."
+            }, {
+                name: 'Information Retrieval',
+                symbolSize: 35,
+                itemStyle: {
+                    color: '#20b2aa' // LightSeaGreen
+                },
+                label: {
+                    show: true
+                },
+                definition: "Emphasizing the development of techniques and algorithms for efficiently searching and extracting relevant information from large datasets, databases, or information repositories."
+            }, {
+                name: 'Human-Computer Interaction (HCI)',
+                symbolSize: 40,
+                itemStyle: {
+                    color: '#2e8b57' // SeaGreen
+                },
+                label: {
+                    show: true
+                },
+                definition: "The study of the interaction between humans and computers to optimize the design of information systems and interfaces, making them user-friendly and efficient."
+            }, {
+                name: 'Information Organization',
+                symbolSize: 35,
+                itemStyle: {
+                    color: '#008080' // Teal
+                },
+                label: {
+                    show: true
+                },
+                definition: "Involves methods for categorizing, classifying, and structuring information to enhance its accessibility and usability."
+            }, {
+                name: 'Information Ethics',
+                symbolSize: 35,
+                itemStyle: {
+                    color: '#4682b4' // SteelBlue
+                },
+                label: {
+                    show: true
+                },
+                definition: "Focuses on the ethical considerations of information-related practices, such as privacy, intellectual property, and information access."
+            }, {
+                name: 'Information Behavior',
+                symbolSize: 35,
+                itemStyle: {
+                    color: '#800080' // Purple
+                },
+                label: {
+                    show: true
+                },
+
+                definition: "Studies how individuals, groups, and organizations seek, use, and share information, along with identifying the factors that influence these behaviors."
+            },
+                {
+                    name: 'Artificial Intelligence',
+                    symbolSize: 50,
+                    itemStyle: {
+                        color: '#ff7f50' // Coral
+                    },
+                    label: {
+                        show: true
+                    },
+                    definition: "Artificial Intelligence (AI) refers to the simulation of human intelligence in machines that are programmed to think like humans and mimic their actions."
+                }, {
+                    name: 'Machine Learning',
+                    symbolSize: 40,
+                    itemStyle: {
+                        color: '#87ceeb' // SkyBlue
+                    },
+                    label: {
+                        show: true
+                    },
+                    definition: "Machine Learning is a subset of AI that provides systems the ability to automatically learn and improve from experience without being explicitly programmed."
+                }, {
+                    name: 'Natural Language Processing',
+                    symbolSize: 30,
+                    itemStyle: {
+                        color: '#98fb98' // PaleGreen
+                    },
+                    label: {
+                        show: true
+                    },
+                    definition: "Natural Language Processing (NLP) is a field of AI that focuses on the interaction between computers and humans through natural language."
+                }, {
+                    name: 'Knowledge Graph',
+                    symbolSize: 35,
+                    itemStyle: {
+                        color: '#dda0dd' // Plum
+                    },
+                    label: {
+                        show: true
+                    },
+                    definition: "A Knowledge Graph is a structured representation of knowledge that incorporates entities, relationships, and attributes to describe the semantics of a domain."
+                }, {
+                    name: 'Data Mining',
+                    symbolSize: 30,
+                    itemStyle: {
+                        color: '#ff69b4' // HotPink
+                    },
+                    label: {
+                        show: true
+                    },
+                    definition: "Data Mining involves the process of discovering patterns and knowledge from large amounts of data to support decision-making."
+                }
+            ],
+            links: [{
+                source: 'Information Science',
+                target: 'Information Systems'
+            }, {
+                source: 'Information Science',
+                target: 'Information Retrieval'
+            }, {
+                source: 'Information Science',
+                target: 'Human-Computer Interaction (HCI)'
+            }, {
+                source: 'Information Science',
+                target: 'Information Organization'
+            }, {
+                source: 'Information Science',
+                target: 'Information Ethics'
+            }, {
+                source: 'Information Science',
+                target: 'Information Behavior'
+            },
+            {
+                source: 'Information Science',
+                target: 'Artificial Intelligence'
+            }, {
+                source: 'Information Science',
+                target: 'Machine Learning'
+            }, {
+                source: 'Information Science',
+                target: 'Natural Language Processing'
+            }, {
+                source: 'Information Science',
+                target: 'Knowledge Graph'
+            }, {
+                source: 'Information Science',
+                target: 'IData Mining'
+            }
+            ],
+        };
+
+        var option = {
+
+            series: [{
+                type: 'graph',
+                layout: 'force',
+                data: graphData.nodes,
+                links: graphData.links,
+                force: {
+                    repulsion: 2000
+                },
+                itemStyle: {
+                    borderWidth: 1,
+                    borderColor: '#fff'
+                },
+                draggable: true,
+                roam: true
+            }]
+        };
+
+        chart.setOption(option);
+
+        // Set up click event for clickable nodes
+        chart.on('click', function (params) {
+            if (params.dataType === 'node') {
+                // Get the definition of the clicked node
+                var nodeDefinition = params.data.definition;
+
+                // Add the definition to the chat
+                chatContainer.append('<p><strong>ChatGPT:</strong> ' + nodeDefinition + '</p>');
+            }
+        });
+    }
+</script>
+</body>
+</html>
