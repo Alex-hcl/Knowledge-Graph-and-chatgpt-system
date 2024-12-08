@@ -1,72 +1,536 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<title>html5写的3D逼真圣诞树效果</title>
-<meta charset="utf-8" >
-<style>
-html, body { width: 100%; height: 100%; margin: 0; padding: 0; border: 0; }
-div { margin: 0; padding: 0; border: 0; }
-.nav {
-		position: absolute;
-		top: 0;
-				left: 0;
-				width: 100%;
-				height: 27px;
-				background-color: white;
-				color: black;
-				text-align: center;
-				line-height: 25px;
-			}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-			a { color: black; text-decoration: none; border-bottom: 1px dashed black; }
-			a:hover { border-bottom: 1px solid red; }
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-			.previous { float: left; margin-left: 10px; }
-			.next { float: right; margin-right: 10px; }
+    <title>Chenglue's Research</title>
 
-			.green { color: green; }
-			.red { color: red; }
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-			textarea { width: 100%; height: 100%; border: 0; padding: 0; margin: 0; padding-bottom: 20px; }
-			.block-outer { float: left; width: 22%; height: 100%; padding: 5px; border-left: 1px solid black; margin: 30px 3px 3px 3px; }
-			.block-inner { height: 68%; }
-			.one { border: 0; }
-</style>
-	</head>
-	<body marginwidth="0" marginheight="0">
-	<canvas id="c" height="356" width="446">
-<script>
-			var collapsed = true;
-			function toggle() {
-				var fs = top.document.getElementsByTagName('frameset')[0];
-				var f = fs.getElementsByTagName('frame');
-				if (collapsed) {
-					fs.rows = '250px,*';
-					// enable resizing of frames in firefox/opera
-					fs.noResize = false;
-					f[0].noResize = false;
-					f[1].noResize = false;
-				} else {
-					fs.rows = '30px,*';
-					// disable resizing of frames in firefox/opera
-					fs.noResize = true;
-					f[0].noResize = true;
-					f[1].noResize = true;
-				}
-				collapsed = !collapsed;
-			}
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-</script>
-<script>
-			var b = document.body;
-			var c = document.getElementsByTagName('canvas')[0];
-			var a = c.getContext('2d');
-			document.body.clientWidth; // fix bug in chrome.
-</script>
-<script>
-// start of submission //
-M=Math;Q=M.random;J=[];U=16;T=M.sin;E=M.sqrt;for(O=k=0;x=z=j=i=k<200;)with(M[k]=k?c.cloneNode(0):c){width=height=k?32:W=446;with(getContext('2d'))if(k>10|!k)for(font='60px Impact',V='rgba(';I=i*U,fillStyle=k?k==13?V+'205,205,215,.15)':V+(147+I)+','+(k%2?128+I:0)+','+I+',.5)':'#cca',i<7;)beginPath(fill(arc(U-i/3,24-i/2,k==13?4-(i++)/2:8-i++,0,M.PI*2,1)));else for(;x=T(i),y=Q()*2-1,D=x*x+y*y,B=E(D-x/.9-1.5*y+1),R=67*(B+1)*(L=k/9+.8)>>1,i++<W;)if(D<1)beginPath(strokeStyle=V+R+','+(R+B*L>>0)+',40,.1)'),moveTo(U+x*8,U+y*8),lineTo(U+x*U,U+y*U),stroke();for(y=H=k+E(k++)*25,R=Q()*W;P=3,j<H;)J[O++]=[x+=T(R)*P+Q()*6-3,y+=Q()*U-8,z+=T(R-11)*P+Q()*6-3,j/H*20+((j+=U)>H&Q()>.8?Q(P=9)*4:0)>>1]}setInterval(function G(m,l){A=T(D-11);if(l)return(m[2]-l[2])*A+(l[0]-m[0])*T(D);a.clearRect(0,0,W,W);J.sort(G);for(i=0;L=J[i++];a.drawImage(M[L[3]+1],207+L[0]*A+L[2]*T(D)>>0,L[1]>>1)){if(i==2e3)a.fillText('Merry Christmas!',U,345);if(!(i%7))a.drawImage(M[13],((157*(i*i)+T(D*5+i*i)*5)%W)>>0,((113*i+(D*i)/60)%(290+i/99))>>0);}D+=.02},1)
-// end of submission //
-</script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;700;900&display=swap"
+          rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link href="css/aos.css" rel="stylesheet">
+
+    <link href="css/templatemo-nomad-force.css" rel="stylesheet">
+    <!--
+
+    TemplateMo 567 Nomad Force
+
+    https://templatemo.com/tm-567-nomad-force
+
+    -->
+</head>
+
+<body>
+
+<main>
+
+    <section class="hero" id="hero">
+        <div class="heroText">
+            <h1 class="text-white mt-5 mb-lg-4" data-aos="zoom-in" data-aos-delay="800">
+                Enhancing ChatGPT with Knowledge Graphs
+                <h5 class="text-white" data-aos="zoom-in" data-aos-delay="800">
+                </h5>
+            </h1>
+        </div>
+
+        <div class="videoWrapper">
+            <video autoplay="" loop="" muted="" class="custom-video"
+                   poster="videos/001.png">
+                <source src="videos/001.mp4" type="video/mp4">
+
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="overlay"></div>
+    </section>
+
+    <nav class="navbar navbar-expand-lg bg-light shadow-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <strong>Chenglue's Research</strong>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#about">Introduction</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pro">Promblem Indentification</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Design</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#news">Demo</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Evaluation Plan</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section-padding pb-0" id="about">
+        <div class="container mb-5 pb-lg-5">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="mb-3" data-aos="fade-up">INTTRODUCTION</h2>
+                </div>
+
+                <div class="col-lg-6 col-12 mt-3 mb-lg-5">
+                    <p data-aos="fade-up" data-aos-delay="500"> In the contemporary information-driven world,
+                        intelligent systems and AI-powered models have revolutionized the way we access knowledge. These
+                        systems, such as ChatGPT, have emerged as crucial tools for facilitating
+                        human-computer interactions, information retrieval, and decision-making. However, despite their
+                        remarkable capabilities, human interaction with these intelligent systems
+                        faces a critical limitation rooted in the cognitive and linguistic abilities of users. </p>
+                </div>
+
+                <div class="col-lg-6 col-12 mt-lg-3 mb-lg-5">
+                    <p data-aos="fade-up" data-aos-delay="500">This limitation pertains to the phenomenon of "Partial
+                        Knowledge Retrieval". Users often grapple with formulating questions that
+                        comprehensively encapsulate their genuine knowledge needs. Concurrently, intelligent systems
+                        predominantly respond to the explicit questions posed by users, frequently failing to offer a
+                        comprehensive overview of the knowledge domain. This results in a gap in users' understanding of
+                        the entire knowledge landscape.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container-fluid" id="pro">
+            <div class="row">
+                <div class="col-lg-3 col-12 p-0">
+                    <img src="images/img.png" class="img-fluid about-image" alt="">
+                </div>
+
+                <div class="col-lg-3 col-12 bg-dark">
+                    <div class="d-flex flex-column flex-wrap justify-content-center h-100 py-5 px-4 pt-lg-4 pb-lg-0">
+                        <h5 class="text-white mb-3" data-aos="fade-up">Problem Indentification</h5>
+
+                        <p class="text-secondary-white-color" data-aos="fade-up">This research focuses on the challenge
+                            of interactions with Chatgpt. Users' limited
+                            expression and system responses confined to explicit questions hinder effective knowledge
+                            acquisition. While previous research has explored system capabilities, there's a gap in
+                            understanding how to help users better comprehend knowledge and ask improved questions.
+                            Additionally, some ChatGPT responses are overly verbose, potentially causing user
+                            impatience.</p>
+
+
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-12 p-0">
+                    <section id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="images/people/img01.png"
+                                     class="img-fluid team-image" alt="">
+
+                                <div class="team-thumb bg-warning">
+                                    <h3 class="text-white mb-0">Incomplete Knowledge Retrieval</h3>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <img src="images/people/img02.png"
+                                     class="img-fluid team-image" alt="">
+
+                                <div class="team-thumb bg-success">
+                                    <h3 class="text-white mb-0">Knowledge & Language Constraints</h3>
+
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/people/img03.png"
+                                     class="img-fluid team-image" alt="">
+
+                                <div class="team-thumb bg-warning">
+                                    <h3 class="text-white mb-0">Question-bound Responses</h3>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <img src="images/people/img04.png"
+                                     class="img-fluid team-image" alt="">
+
+                                <div class="team-thumb bg-success">
+                                    <h3 class="text-white mb-0">Verbose Responses</h3>
+
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/people/img05.png"
+                                     class="img-fluid team-image" alt="">
+
+                                <div class="team-thumb bg-warning">
+                                    <h3 class="text-white mb-0">Knowledge Gap</h3>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel"
+                                data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+
+                        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel"
+                                data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" id="portfolio">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-12">
+                    <h2 class="mb-5 text-center" data-aos="fade-up">Building Knowledge Graph</h2>
+                </div>
+
+                <div class="col-lg-6 col-12">
+
+
+                    <div class="portfolio-thumb" data-aos="fade-up">
+                        <a href="1.html">
+                            <img src="images/portfolio/img01.png"
+                                 class="img-fluid portfolio-image" alt="">
+                        </a>
+
+                        <div class="portfolio-info">
+                            <h4 class="portfolio-title mb-0">Step01: Named-entity recognition</h4>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-thumb" data-aos="fade-up">
+                        <a href="3.html">
+                            <img src="images/portfolio/img03.png"
+                                 class="img-fluid portfolio-image" alt="">
+                        </a>
+
+                        <div class="portfolio-info">
+                            <h4 class="portfolio-title mb-0">Step03: Knowledge Graph Construction</h4>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-12">
+                    <div class="portfolio-thumb mt-5 mt-lg-0 mb-5" data-aos="fade-up">
+                        <a href="2.html">
+                            <img src="images/portfolio/img02.png"
+                                 class="img-fluid portfolio-image" alt="">
+                        </a>
+
+                        <div class="portfolio-info">
+                            <h4 class="portfolio-title mb-0">Step02: Entity Relation Extraction</h4>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-12">
+                    <h2 class="mb-5 text-center" data-aos="fade-up">System Development</h2>
+                </div>
+
+                <div class="col-lg-6 col-12">
+
+
+                    <div class="portfolio-thumb" data-aos="fade-up">
+                        <a href="a1.html">
+                            <img src="images/portfolio/img10.png"
+                                 class="img-fluid portfolio-image" alt="">
+                        </a>
+
+                        <div class="portfolio-info">
+                            <h4 class="portfolio-title mb-0">Mapping Natural Language Queries to Graph Entities</h4>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-thumb" data-aos="fade-up">
+                        <a href="a3.html">
+                            <img src="images/portfolio/img11.png"
+                                 class="img-fluid portfolio-image" alt="">
+                        </a>
+
+                        <div class="portfolio-info">
+                            <h4 class="portfolio-title mb-0">Random Sampling Strategy</h4>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-12">
+                    <div class="portfolio-thumb mt-5 mt-lg-0 mb-5" data-aos="fade-up">
+                        <a href="a2.html">
+                            <img src="images/portfolio/img12.png"
+                                 class="img-fluid portfolio-image" alt="">
+                        </a>
+
+                        <div class="portfolio-info">
+                            <h4 class="portfolio-title mb-0">Neighbor Information Aggregation</h4>
+
+                        </div>
+                    </div>
+
+                    <div class="portfolio-thumb mt-5 mt-lg-0 mb-5" data-aos="fade-up">
+                        <a href="a4.html">
+                            <img src="images/portfolio/img13.png"
+                                 class="img-fluid portfolio-image" alt="">
+                        </a>
+
+                        <div class="portfolio-info">
+                            <h4 class="portfolio-title mb-0">System Design and Development</h4>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <section class="news section-padding" id="news">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-12">
+                    <h2 class="mb-5 text-center" data-aos="fade-up">Demo</h2>
+                </div>
+
+                <div class="col-lg-6 col-12 mb-5 mb-lg-0">
+                    <div class="news-thumb" data-aos="fade-up">
+                        <a href="knowledgeGraph01.html" class="news-image-hover news-image-hover-warning">
+                            <img src="images/news/img04.png"
+                                 class="img-fluid large-news-image news-image" alt="">
+                        </a>
+
+                        <div class="news-category bg-warning text-white">System</div>
+
+                        <div class="news-text-info">
+                            <h5 class="news-title">
+                                <a class="news-title-link">Integrated System</a>
+                            </h5>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-12">
+                    <div class="news-thumb news-two-column d-flex flex-column flex-lg-row" data-aos="fade-up">
+                        <div class="news-top w-100">
+
+                            <a href="n1.html">
+                                <img src="images/news/img05.png"
+                                     class="img-fluid news-image" alt="">
+                            </a>
+
+                            <div class="news-category bg-primary text-white">Graph</div>
+                        </div>
+
+                        <div class="news-bottom w-100">
+                            <div class="news-text-info">
+                                <h5 class="news-title">
+                                    <a href="video.html">Knowledge Graph</a>
+                                </h5>
+
+                                <div class="d-flex flex-wrap">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="news-thumb news-two-column d-flex flex-column flex-lg-row" data-aos="fade-up">
+                        <div class="news-top w-100" data-aos="fade-up">
+
+                            <a href="vedio1.html" class="news-image-hover news-image-hover-success">
+                                <img src="images/news/img06.png"
+                                     class="img-fluid news-image" alt="">
+                            </a>
+
+                            <div class="news-category bg-success text-white">Video</div>
+                        </div>
+
+                        <div class="news-bottom w-100">
+                            <div class="news-text-info">
+                                <h5 class="news-title">
+
+                                    <a href="vedio1.html" class="news-title-link">Presentation</a>
+                                </h5>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class=" contact section-padding" id="contact">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-12">
+                    <h2 class="mb-5 text-center" data-aos="fade-up">Evaluation Plan</h2>
+                </div>
+
+                <div class="col-lg-6 col-12">
+
+
+                    <div class="portfolio-thumb" data-aos="fade-up">
+                        <a href="c1.html">
+                            <img src="images/portfolio/img31.png"
+                                 class="img-fluid portfolio-image" alt="">
+                        </a>
+
+                        <div class="portfolio-info">
+                            <h4 class="portfolio-title mb-0">User Feedback</h4>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-thumb" data-aos="fade-up">
+                        <a href="c3.html">
+                            <img src="images/portfolio/img33.png"
+                                 class="img-fluid portfolio-image" alt="">
+                        </a>
+
+                        <div class="portfolio-info">
+                            <h4 class="portfolio-title mb-0">Knowledge Assessment and Testing</h4>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-12">
+                    <div class="portfolio-thumb mt-5 mt-lg-0 mb-5" data-aos="fade-up">
+                        <a href="c2.html">
+                            <img src="images/portfolio/img32.png"
+                                 class="img-fluid portfolio-image" alt="">
+                        </a>
+
+                        <div class="portfolio-info">
+                            <h4 class="portfolio-title mb-0">Query Understanding Accuracy</h4>
+
+                        </div>
+                    </div>
+
+                    <div class="portfolio-thumb mt-5 mt-lg-0 mb-5" data-aos="fade-up">
+                        <a href="c4.html">
+                            <img src="images/portfolio/img34.png"
+                                 class="img-fluid portfolio-image" alt="">
+                        </a>
+
+                        <div class="portfolio-info">
+                            <h4 class="portfolio-title mb-0">Controlled Experimental Studies</h4>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-12">
+                <h5 class="text-white">
+                    <i class="bi-geo-alt-fill me-2"></i>
+                    University of Pittsburgh
+                </h5>
+
+                <a href="chh313@pitt.edu" class="custom-link mt-3 mb-5">
+                    chh313@pitt.edu
+                </a>
+            </div>
+
+            <div class="col-6">
+                <p class="copyright-text mb-0">Copyright © Chenglue Huang 2023 </p>
+
+            </div>
+
+            <div class="col-lg-3 col-5 ms-auto">
+                <ul class="social-icon">
+                    <li><a href="#" class="social-icon-link bi-facebook"></a></li>
+
+                    <li><a href="#" class="social-icon-link bi-twitter"></a></li>
+
+                    <li><a href="#" class="social-icon-link bi-whatsapp"></a></li>
+
+                    <li><a href="#" class="social-icon-link bi-instagram"></a></li>
+
+                    <li><a href="#" class="social-icon-link bi-youtube"></a></li>
+                </ul>
+            </div>
+
+        </div>
+        </section>
+</footer>
+
+<!-- JAVASCRIPT FILES -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery.sticky.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/magnific-popup-options.js"></script>
+<script src="js/scrollspy.min.js"></script>
+<script src="js/custom.js"></script>
+
 </body>
 </html>
