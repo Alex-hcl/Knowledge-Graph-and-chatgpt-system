@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrated ChatGPT & Knowledge Graph</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/chat-kg-demo.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+</head>
+<body class="kg-demo-body">
+<div class="container" id="kg-demo-root">
+    <div class="col-md-6" id="chat-container">
+        <h2>Chat</h2>
+        <div id="chat"></div>
+        <div class="input-group mb-3" id="input-container">
+            <input type="text" class="form-control" id="user-input" placeholder="Type your message...">
+            <div class="input-group-append">
+                <button class="btn btn-primary" id="send-btn" type="button">Send</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6" id="knowledge-graph" style="display:none;">
+        <h2>Knowledge Graph</h2>
+        <div id="chart-container"></div>
+    </div>
+</div>
+
+<script src="../../js/chat-kg-demo.js"></script>
+<script>
+    initChatKnowledgeGraphDemo({
+        selectors: {
+            userInput: '#user-input',
+            sendButton: '#send-btn',
+            chat: '#chat',
+            graphPanel: '#knowledge-graph',
+            chartContainer: '#chart-container'
+        },
+        assistantResponse: 'I can guide you through related entities in this graph. Click nodes to retrieve concise definitions.',
+        graphData: {
+            nodes: [
+                { name: 'Information Science', symbolSize: 45, itemStyle: { color: '#5f9ea0' }, definition: 'Covers how information is organized, retrieved, and applied.' },
+                { name: 'Information Systems', symbolSize: 40, itemStyle: { color: '#1e90ff' }, definition: 'Systems for storing, retrieving, and processing information.' },
+                { name: 'Information Retrieval', symbolSize: 35, itemStyle: { color: '#20b2aa' }, definition: 'Methods to efficiently find relevant information.' },
+                { name: 'Human-Computer Interaction', symbolSize: 40, itemStyle: { color: '#2e8b57' }, definition: 'Design and evaluation of human-computer interfaces.' },
+                { name: 'Information Organization', symbolSize: 35, itemStyle: { color: '#008080' }, definition: 'Classification and structuring for accessibility.' },
+                { name: 'Information Ethics', symbolSize: 35, itemStyle: { color: '#4682b4' }, definition: 'Ethical issues like privacy, access, and ownership.' },
+                { name: 'Information Behavior', symbolSize: 35, itemStyle: { color: '#800080' }, definition: 'How people seek, use, and share information.' },
+                { name: 'Artificial Intelligence', symbolSize: 50, itemStyle: { color: '#ff7f50' }, definition: 'Systems that perform tasks associated with human intelligence.' },
+                { name: 'Machine Learning', symbolSize: 40, itemStyle: { color: '#87ceeb' }, definition: 'Models that learn patterns from data.' },
+                { name: 'Natural Language Processing', symbolSize: 30, itemStyle: { color: '#98fb98' }, definition: 'Techniques for understanding and generating human language.' },
+                { name: 'Knowledge Graph', symbolSize: 35, itemStyle: { color: '#dda0dd' }, definition: 'Structured network of entities and relations.' },
+                { name: 'Data Mining', symbolSize: 30, itemStyle: { color: '#ff69b4' }, definition: 'Pattern discovery from large datasets.' }
+            ],
+            links: [
+                { source: 'Information Science', target: 'Information Systems' },
+                { source: 'Information Science', target: 'Information Retrieval' },
+                { source: 'Information Science', target: 'Human-Computer Interaction' },
+                { source: 'Information Science', target: 'Information Organization' },
+                { source: 'Information Science', target: 'Information Ethics' },
+                { source: 'Information Science', target: 'Information Behavior' },
+                { source: 'Information Science', target: 'Artificial Intelligence' },
+                { source: 'Information Science', target: 'Machine Learning' },
+                { source: 'Information Science', target: 'Natural Language Processing' },
+                { source: 'Information Science', target: 'Knowledge Graph' },
+                { source: 'Information Science', target: 'Data Mining' },
+                { source: 'Artificial Intelligence', target: 'Machine Learning' },
+                { source: 'Artificial Intelligence', target: 'Natural Language Processing' },
+                { source: 'Machine Learning', target: 'Knowledge Graph' }
+            ]
+        },
+        repulsion: 1200,
+        renderImmediately: false,
+        nodeClickMode: 'definition'
+    });
+</script>
+</body>
+</html>
+
+
+
+

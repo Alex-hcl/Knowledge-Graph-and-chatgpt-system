@@ -1,0 +1,73 @@
+﻿.kg-demo-body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+}
+
+#kg-demo-root {
+  display: flex;
+  max-width: 1200px;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#chat-container {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  background-color: #fff;
+}
+
+#knowledge-graph {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  background-color: #f8f9fa;
+}
+
+#input-container {
+  display: flex;
+  padding: 10px;
+  background-color: #fff;
+}
+
+#user-input {
+  flex: 1;
+  padding: 8px;
+  margin-right: 10px;
+}
+
+#send-btn {
+  padding: 8px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+}
+
+#chart-container {
+  height: 80vh;
+  min-height: 420px;
+}
+
+.clickable-node {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  #kg-demo-root {
+    flex-direction: column;
+    margin: 10px;
+  }
+
+  #chart-container {
+    height: 55vh;
+    min-height: 320px;
+  }
+}

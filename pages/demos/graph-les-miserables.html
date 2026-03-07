@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Knowledge Graph Example</title>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  <script src="https://fastly.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <script src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="../../js/echarts-graph-page.js"></script>
+  <script>
+    initEchartsGraphPage({
+      containerId: 'container',
+      dataPath: '../../data/les.json',
+      buildOption: function (graph) {
+        graph.nodes.forEach(function (node) {
+          node.label = {
+            show: node.symbolSize > 30
+          };
+        });
+
+        return {
+          title: {
+            subtext: 'Default layout',
+            top: 'bottom',
+            left: 'right'
+          },
+          tooltip: {},
+          legend: [
+            {
+              data: graph.categories.map(function (item) {
+                return item.name;
+              })
+            }
+          ],
+          animationDuration: 1500,
+          animationEasingUpdate: 'quinticInOut',
+          series: [
+            {
+              name: 'Les Miserables',
+              type: 'graph',
+              layout: 'none',
+              data: graph.nodes,
+              links: graph.links,
+              categories: graph.categories,
+              roam: true,
+              label: {
+                position: 'right',
+                formatter: '{b}'
+              },
+              lineStyle: {
+                color: 'source',
+                curveness: 0.3
+              },
+              emphasis: {
+                focus: 'adjacency',
+                lineStyle: {
+                  width: 10
+                }
+              }
+            }
+          ]
+        };
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
+
